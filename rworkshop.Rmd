@@ -1,0 +1,66 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Packages
+```{r}
+#tidyverse
+library(haven)
+library(ggplot2)
+library(dplyr)
+#Rshiny-eco
+library(gt)
+```
+
+Import
+```{r}
+library(haven)
+adae <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adae.sas7bdat", 
+    NULL)
+View(adae)
+adsl <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adsl.sas7bdat", 
+    NULL)
+View(adsl)
+
+```
+
+
+Prep Data
+```{r}
+
+
+
+
+```
+
+
+Viz
+```{r}
+adae %>%
+ filter(!(AEREL %in% "")) %>%
+ ggplot() +
+  aes(x = AESEV, fill = TRTA) +
+  geom_bar() +
+  scale_fill_hue(direction = 1) +
+  theme_minimal()
+
+
+```
+
+
+Table
+```{r}
+
+
+
+
+```
+
+
+
+```{r}
+
+
+
+```
